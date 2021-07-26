@@ -1,0 +1,42 @@
+/* 
+ * LESS Variables are defined with an @ character
+ * and can have different kinds of data types: 
+ *  color, string, boolean, multi-value
+ */
+header {
+  font-size: 24px;
+  border: 2px solid #000;
+  text-align: center;
+}
+header h1 {
+  color: #27ae60;
+}
+header h1:before {
+  content: "A project - ";
+}
+header h1:after {
+  content: " - on CodePen";
+}
+.container {
+  margin: 40px 0;
+}
+.container p {
+  padding: 0 25px;
+}
+.container p a {
+  color: #27ae60;
+  text-decoration: none;
+}
+.container p a:hover {
+  color: #145b32;
+}
+.container p a:active {
+  color: #60db94;
+}
+footer {
+  border: 2px solid #000;
+  text-align: center;
+}
+footer p {
+  color: #27ae60;
+}

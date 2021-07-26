@@ -1,0 +1,78 @@
+less:
+->resusable code
+->better ogranized
+->easier to manage
+gives access to:
+    >variables
+    >mixins (rules as an object)
+    >math
+ecc
+
+(look at codepen)
+
+_______________________
+variables
+sintassi= @name : value;
+possono essere usate ovunque come valore di regole o anche come VALORE DI ALTRE VARIABILI   
+è buona norma usare + livelli di variabili x alcune caratteristiche (++ in development):
+    @color1: #xxx;
+    @color2: #zzz;
+    @templateColor: @color1; -> uso questa var nelle regole, se decido di cambiare a @color2 devo solo cambiare il valore 1 volta: in questa varibile
+_____________________________
+nested rules:
+x segnalare figli di tag ai quali assegnare regole non si scrive +
+header h1 span (tag separati da spazio = span figlio di h1 figlio di header)
+ma si scrive
+header{
+    h1{
+        span{}
+    }
+}
++ chiaro e semplice
+x sibilings wt id / classes u can keep using the "," 
+esempio:
+.container{
+    #p1, #p2{
+        ...
+    }
+}
+_______________________
+funzioni incontrate finora:
+darken(colore, percentuale)->scurisci colore di percentuale%
+lighten(colore, percentuale)->schiarisci """%
+________________________________
+pseudostati:
+&:stato = applica stato a "genitore"
+a:hover{...}
+==
+a{
+    &:hover{...}
+}
+________________________________
+mixins
+object-oriented css
+reusable RULESETS
+dry, clean and ogranized code
+might not work on ALL browsers tho
+-> use vendor prefixes:
+-moz- for firefox
+-webkit- for chrome
+ecc
+syntax:
+.name(@parameter){
+    -webkit-name: @parameter;
+    -moz-name: @parameter;
+    nome: @parameter;
+}
+then to use it as a rule:
+
+tag{
+    .name(val);
+}
+
+->ruleset is defined once and used anywhere
+->can call mixins inside minsins
+____________________________________________
+nb:
+if u use float on child tag but u dont want ALL OTHER SIBILINGS to float u can define a mixin containing "clear: both" and give it to the elements that should not float
+->ad esempio siblilings of parent class that is defined AFTER
