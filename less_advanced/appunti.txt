@@ -1,0 +1,23 @@
+Parametized mixins
+to give default value to a mixin wt parameters use the syntax=
+.name(@par:val){...}
+(ALWAYS REMEMBER THE DRY PRINCIPLE: Don't Repeat Yourself!)
+----------------------------------------------------------------
+guarded mixins
+mixin that is applied sse condizione è soddisfatta
+sintassi=
+.nome(@par) when (condition){
+    ...
+}
+NB I CAN MAKE MORE GUARDED MIXINS WITH THE SAME NAME BUT DIFFERENT CONDITIONS! (like an if else situation/switch)
+.mixin(@par)when(conditio1){...} && .mixin(@par)when(conditio2){...}  
+-------------------------------
+built in functions
+darken(color, percent%)-> make color darker
+lighten(color, percent%)-> make color lighter
+and many more are avilable
+--------------------------------
+@import path or url
+to get rules ecc from other files
+
+NB bootstrap works very well wt less, it's WRITTEN in less -> easy to customize
